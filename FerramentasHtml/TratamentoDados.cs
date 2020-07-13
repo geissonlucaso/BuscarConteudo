@@ -5,20 +5,19 @@ using System.Text.RegularExpressions;
 
 namespace FerramentasHtml
 {
-    public static class TratamentoDadosHtml
+    public static class TratamentoDados
     {
         // Métodos.
 
         /**
-         * Método para contar o numero de referencias de uma palavra chave em um 
-         * documento HTML
+         * Método para contar o numero de referencias de uma palavra chave
          */
-        public static int ContarCitacoes(string htmlPage, string word)
+        public static int ContarCitacoes(string strText, string word)
         {
-            if (!String.IsNullOrEmpty(htmlPage))
+            if (!String.IsNullOrEmpty(strText))
             {
                 int quantidade = 0;
-                quantidade = Regex.Matches(htmlPage, word, RegexOptions.IgnoreCase).Count;  // Ignora letras Maiusc. e Minusc.
+                quantidade = Regex.Matches(strText, string.Format(@"\b{0}\b", Regex.Escape(word)), RegexOptions.IgnoreCase).Count;  // Ignora letras Maiusc. e Minusc.
 
                 return quantidade;
             }
@@ -47,12 +46,12 @@ namespace FerramentasHtml
             }
 
             // Remoção dos scripts, styles e seus respectivos conteudos.
-            TratamentoDadosHtml.RemoverTagsBody(ref html, "script");
-            TratamentoDadosHtml.RemoverTagsBody(ref html, "style");
+            TratamentoDados.RemoverTagsBody(ref html, "script");
+            TratamentoDados.RemoverTagsBody(ref html, "style");
 
             // Remoção das demais tags. [Onde o conteúdo está visível no Browser].
             html = Regex.Replace(html, "<.*?>", " ");
-            //html = SingleSpacedTrim(html);
+            html = RemoverEspacoVazio(html);
             return html;
         }
 
@@ -75,7 +74,7 @@ namespace FerramentasHtml
             }
         }
 
-        private static String SingleSpacedTrim(String inString)
+        private static String RemoverEspacoVazio(String inString)
         {
             StringBuilder sb = new StringBuilder();
             Boolean inBlanks = false;
