@@ -88,10 +88,6 @@
       <Project>{c41f2b9b-2b0b-44d5-8ef4-671b05d1d8bd}</Project>
       <Name>FerramentasTratamento</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ResultSearchModel\ResultSearchModel.csproj">
-      <Project>{a3d18951-c2de-4ed3-b7dd-4dcd7d22d4c3}</Project>
-      <Name>ResultSearchModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ namespace BuscarConteudo
 {
     public partial class Form1 : Form
     {
+        // Variaveis globais.
         private int contador = 0;
         string strConteudoPDF = "";
 
@@ -27,13 +28,7 @@ namespace BuscarConteudo
         // Adicionar uma URL como item do ListView.
         private void btnAdicionarURL_Click(object sender, EventArgs e)
         {
-            contador++;
             string urlTexto = txtURL.Text;
-
-            if (contador > 9)
-                lblContador.Text = contador.ToString();
-            else
-                lblContador.Text = "0" + contador.ToString();
 
             txtURL.Clear();     // Limpar o texto e dar foco.
             txtURL.Focus();
@@ -54,12 +49,6 @@ namespace BuscarConteudo
                 {
                     ListViewItem lvwItem = lvwURLs.SelectedItems[0];
                     lvwURLs.Items.Remove(lvwItem);
-
-                    contador--;
-                    if (contador > 9)
-                        lblContador.Text = contador.ToString();
-                    else
-                        lblContador.Text = "0" + contador.ToString();
                 }
             }
         }

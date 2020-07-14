@@ -33,7 +33,6 @@
             this.lvwReults = new System.Windows.Forms.ListView();
             this.ch_urlResultado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_numCitacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblContador = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -64,7 +63,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblURLCount);
             this.panel1.Controls.Add(this.lvwReults);
-            this.panel1.Controls.Add(this.lblContador);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.btnPesquisar);
@@ -119,25 +117,15 @@
             this.ch_numCitacoes.Text = "N° Citações";
             this.ch_numCitacoes.Width = 88;
             // 
-            // lblContador
-            // 
-            this.lblContador.AutoSize = true;
-            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContador.Location = new System.Drawing.Point(139, 157);
-            this.lblContador.Name = "lblContador";
-            this.lblContador.Size = new System.Drawing.Size(24, 17);
-            this.lblContador.TabIndex = 14;
-            this.lblContador.Text = "00";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 17);
+            this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 13;
-            this.label3.Text = "URLs Adicionadas:";
+            this.label3.Text = "URLs Adicionadas";
             // 
             // btnRemover
             // 
@@ -372,7 +360,6 @@
         private System.Windows.Forms.ColumnHeader ch_url;
         private System.Windows.Forms.ListView lvwReults;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader ch_numCitacoes;
         private System.Windows.Forms.ColumnHeader ch_urlResultado;
